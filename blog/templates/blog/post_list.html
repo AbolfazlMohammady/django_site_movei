@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+
+{% block page_title %}Film List{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="post-grid">
+        {% for post in post_list %}
+        <div class="card post-card">
+            <img src="{{ post.image_url }}">
+            <div class="card-body">
+                <h4 class="card-title">{{ post.title }}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">By: {{ post.author }}</h6>
+                <p class="card-text">{{ post.description }}</p>
+                <a href="{% url 'post-detail' post.id %}" class="btn btn-primary">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

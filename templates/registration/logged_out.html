@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logged Out</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>You have been logged out</h2>
+        <p>You've successfully logged out of your account. <a href="{% url 'login' %}">Log in again</a>.</p>
+    </div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            // دریافت موقعیت X و Y موس در صفحه
+            var x = e.clientX / window.innerWidth;
+            var y = e.clientY / window.innerHeight;
+            
+            // تغییر رنگ پس‌زمینه بر اساس موقعیت موس
+            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #ff007f, #000000)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,719 @@
+/* Navbar Styles */
+
+.navbar {
+    background: linear-gradient(90deg, #91024a8e, #000000);
+    /* تغییر تدریجی از صورتی به مشکی */
+    /* پس‌زمینه با گرادیانت صورتی به مشکی */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 30px;
+    /* ایجاد منحنی برای نوار */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* سایه برای عمق بیشتر */
+    position: relative;
+    /* برای استفاده از پس‌زمینه نئون */
+}
+
+.navbar::before {
+    content: '';
+    /* برای ایجاد حاشیه نئون */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    /* مطابقت با منحنی نوار */
+    background: rgba(255, 0, 127, 0.3);
+    /* رنگ نئون صورتی برای حاشیه */
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+    /* حاشیه نئون */
+    z-index: -1;
+    /* قرار گرفتن در پشت نوار */
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover::before {
+    box-shadow: 0 0 25px rgba(255, 0, 127, 1);
+    /* تقویت حاشیه نئون هنگام هاور */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #ffffffca;
+    /* نئون صورتی برای لوگو */
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff007f, 0 0 15px #ff007f;
+    /* حالت نئون برای متن */
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #ffffff;
+    /* رنگ سفید برای متن لینک‌ها */
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+    /* نئون برای متن لینک */
+}
+
+.nav-link:hover {
+    color: #ff007f;
+    /* تغییر رنگ به نئون صورتی در هاور */
+    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+    /* تقویت حالت نئون هنگام هاور */
+}
+
+
+/* Post List Styles */
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+
+/* Film Card Styles */
+
+.card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    color: #fff;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid #ff69b4;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.4);
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #aaa;
+}
+
+
+/* Footer Styles */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #ff69b4;
+}
+
+.footer .social-links a {
+    color: #ff69b4;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* سه ستون ثابت */
+    gap: 20px;
+}
+
+.post-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.post-card:hover {
+    transform: scale(1.05);
+}
+
+
+/* Post Card Styles */
+
+.post-card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+
+/* افکت نئون برای کارت‌ها */
+
+.post-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
+    /* رنگ نئون و شدت نور */
+    z-index: -1;
+}
+
+
+/* استایل برای تصاویر کارت */
+
+.card-img-top {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid #ff69b4;
+    /* خط پایین نئون صورتی */
+}
+
+
+/* استایل برای دکمه‌های "Read More" */
+
+.btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+    /* افکت نئون برای متن دکمه */
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+}
+
+
+/* Form and Card Styles */
+
+.card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #333;
+    color: #ff69b4;
+    border-bottom: 2px solid #ff69b4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 1.2rem;
+}
+
+.card-body {
+    background-color: #222;
+}
+
+.card-text {
+    color: #aaa;
+}
+
+
+/* Form Elements */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input[type="text"],
+textarea,
+select {
+    background-color: #333;
+    border: 1px solid #ff69b4;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #ff007f;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+}
+
+
+/* Delete Confirmation Card Styles */
+
+.card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h1 {
+    color: #ff69b4;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.btn-danger {
+    background-color: #ff007f;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+    /* افکت نئون برای متن دکمه */
+}
+
+.btn-danger:hover {
+    background-color: #fff;
+    color: #ff007f;
+    border: 2px solid #ff007f;
+    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+}
+
+
+/* Post Detail Page Styles */
+
+.card {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h1,
+.card h3 {
+    color: #ff69b4;
+    /* نئون صورتی برای عناوین */
+}
+
+.card p,
+.card .text-muted {
+    color: #ddd;
+    /* رنگ خاکستری روشن برای متن */
+}
+
+.btn-info {
+    background-color: #00bfff;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.5);
+    /* افکت نئون برای دکمه‌ها */
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #fff;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    text-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff;
+}
+
+.btn-danger {
+    background-color: #ff007f;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+    /* افکت نئون برای دکمه‌ها */
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #fff;
+    color: #ff007f;
+    border: 2px solid #ff007f;
+    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+}
+
+.btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+}
+
+
+/* دکمه ویرایش */
+
+.btn-info {
+    background-color: #00bfff;
+    /* رنگ آبی روشن برای دکمه ویرایش */
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(0, 191, 255, 0.5);
+    /* افکت نئون برای دکمه‌ها */
+    transition: background-color 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #fff;
+    color: #00bfff;
+    border: 2px solid #00bfff;
+    text-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff;
+}
+
+
+/* سایر دکمه‌ها برای هماهنگی */
+
+.btn-danger {
+    background-color: #ff007f;
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+    /* افکت نئون برای دکمه‌ها */
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #fff;
+    color: #ff007f;
+    border: 2px solid #ff007f;
+    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+}
+
+.btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+}
+
+
+/* General Styles */
+
+
+/* General Styles */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+
+/* Hero Section Styles */
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 0, 127, 0.5)),
+    url("{% static 'images/hero.jpg' %}") no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    margin-bottom: 30px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay to enhance text visibility */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+    /* Limit the width of the content */
+    margin: auto;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content .btn-primary {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    text-shadow: 0 0 6px rgba(255, 105, 180, 0.7);
+}
+
+.hero-content .btn-primary:hover {
+    background-color: #fff;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
+    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+    transform: scale(1.1);
+}
+
+
+/* فایل styles.css */
+
+.form-card {
+    background-color: #000000;
+    /* رنگ پس‌زمینه کارت */
+    border: 1px solid #b42776;
+    /* مرز سبک برای کارت */
+    max-width: 500px;
+    margin: auto;
+    /* عرض کارت را محدود کردیم */
+}
+
+.form-title {
+    color: #FF1493;
+    /* رنگ تیتر فرم به رنگ اصلی سایت */
+    font-weight: bold;
+}
+
+.form-text {
+    color: #FF1493;
+    /* رنگ متن‌های فرم به رنگ اصلی سایت */
+}
+
+
+/* Navbar Styles */
+
+.navbar {
+    background: linear-gradient(90deg, #91024a8e, #000000);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: rgba(255, 0, 127, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+    z-index: -1;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover::before {
+    box-shadow: 0 0 25px rgba(255, 0, 127, 1);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #ffffffca;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ff007f, 0 0 15px #ff007f;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+    border-radius: 10px;
+    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
+}
+
+.nav-link:hover {
+    color: #ff007f;
+    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+}
+
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .navbar-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px;
+    }
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .nav-link {
+        font-size: 0.8rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Adjustments for Cards and Forms */
+
+.card {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card img {
+    border-bottom: 2px solid #ff69b4;
+}
+
+.form-card {
+    padding: 15px;
+}
+
+
+/* Responsive Adjustments for Grid Layout */
+
+.main-content {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px;
+}
+
+.post-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}

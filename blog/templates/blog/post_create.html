@@ -1,0 +1,31 @@
+{% extends "_base.html" %}
+
+{% block page_title %}New Post{% endblock %}
+
+
+{% block content %}
+<div class="container mt-4 d-flex align-items-center justify-content-center" style="min-height: 80vh;"> <!-- مرکز عمودی و افقی فرم -->
+    <div class="row justify-content-center w-100">
+        <div class="col-md-5"> <!-- عرض فرم را کوچکتر کردیم -->
+            <div class="card shadow my-3 p-4 form-card"> <!-- کلاس سفارشی اضافه شد -->
+                <h3 class="mb-4 form-title">Add new Post:</h3> <!-- کلاس سفارشی اضافه شد -->
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_table}}
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('mousemove', function(e) {
+        // دریافت موقعیت X و Y موس در صفحه
+        var x = e.clientX / window.innerWidth;
+        var y = e.clientY / window.innerHeight;
+        
+        // تغییر رنگ پس‌زمینه بر اساس موقعیت موس
+        document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #ff007f, #000000)`;
+    });
+</script>
+{% endblock %}
