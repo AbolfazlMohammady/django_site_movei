@@ -1,7 +1,7 @@
 /* Navbar Styles */
 
 .navbar {
-    background: linear-gradient(90deg, #1B263B, #000000);
+    background: linear-gradient(90deg, #1b4f6e, #000000);
     display: flex;
     justify-content: space-between;
     align-items: center;
