@@ -1,53 +1,40 @@
 /* Navbar Styles */
 
 .navbar {
-    background: linear-gradient(90deg, #91024a8e, #000000);
-    /* تغییر تدریجی از صورتی به مشکی */
-    /* پس‌زمینه با گرادیانت صورتی به مشکی */
+    background: linear-gradient(90deg, #1B263B, #000000);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     border-radius: 30px;
-    /* ایجاد منحنی برای نوار */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* سایه برای عمق بیشتر */
     position: relative;
-    /* برای استفاده از پس‌زمینه نئون */
 }
 
 .navbar::before {
     content: '';
-    /* برای ایجاد حاشیه نئون */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border-radius: 30px;
-    /* مطابقت با منحنی نوار */
-    background: rgba(255, 0, 127, 0.3);
-    /* رنگ نئون صورتی برای حاشیه */
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
-    /* حاشیه نئون */
+    background: rgba(0, 172, 238, 0.3);
+    box-shadow: 0 0 15px rgba(0, 172, 238, 0.8);
     z-index: -1;
-    /* قرار گرفتن در پشت نوار */
     transition: box-shadow 0.3s ease;
 }
 
 .navbar:hover::before {
-    box-shadow: 0 0 25px rgba(255, 0, 127, 1);
-    /* تقویت حاشیه نئون هنگام هاور */
+    box-shadow: 0 0 25px rgba(0, 172, 238, 1);
 }
 
 .navbar-brand {
     font-size: 1.8rem;
     color: #ffffffca;
-    /* نئون صورتی برای لوگو */
     text-decoration: none;
     font-weight: bold;
-    text-shadow: 0 0 8px #ff007f, 0 0 15px #ff007f;
-    /* حالت نئون برای متن */
+    text-shadow: 0 0 8px #00a8e8, 0 0 15px #00a8e8;
 }
 
 .navbar-links {
@@ -57,21 +44,54 @@
 
 .nav-link {
     color: #ffffff;
-    /* رنگ سفید برای متن لینک‌ها */
     font-size: 1rem;
     text-decoration: none;
     padding: 8px 15px;
     transition: color 0.3s ease;
     border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-    /* نئون برای متن لینک */
+    text-shadow: 0 0 6px rgba(0, 172, 238, 0.5);
 }
 
 .nav-link:hover {
-    color: #ff007f;
-    /* تغییر رنگ به نئون صورتی در هاور */
-    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
-    /* تقویت حالت نئون هنگام هاور */
+    color: #00a8e8;
+    text-shadow: 0 0 12px #00a8e8, 0 0 24px #00a8e8;
+}
+
+
+/* Toggle Button */
+
+.navbar-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Mobile Styles */
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 30%;
+        padding: 15px;
+        border-radius: 0 0 10px 10px;
+        z-index: 100;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+    .navbar-toggle {
+        display: block;
+    }
 }
 
 
@@ -90,7 +110,7 @@
 .card {
     background-color: #222;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 172, 238, 0.2);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
@@ -100,12 +120,12 @@
 .card img {
     width: 100%;
     display: block;
-    border-bottom: 2px solid #ff69b4;
+    border-bottom: 2px solid #00a8e8;
 }
 
 .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 172, 238, 0.4);
 }
 
 .card h3 {
@@ -125,11 +145,11 @@
     text-align: center;
     padding: 20px;
     background-color: #000;
-    color: #ff69b4;
+    color: #00a8e8;
 }
 
 .footer .social-links a {
-    color: #ff69b4;
+    color: #00a8e8;
     margin: 0 10px;
     font-size: 1.2rem;
     transition: color 0.3s ease;
@@ -139,10 +159,12 @@
     color: #fff;
 }
 
+
+/* Post Grid Styles */
+
 .post-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* سه ستون ثابت */
     gap: 20px;
 }
 
@@ -164,7 +186,7 @@
 .post-card {
     background-color: #222;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 172, 238, 0.2);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
@@ -173,7 +195,7 @@
 }
 
 
-/* افکت نئون برای کارت‌ها */
+/* Neon Effect for Cards */
 
 .post-card::before {
     content: "";
@@ -183,26 +205,24 @@
     right: 0;
     bottom: 0;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.6);
-    /* رنگ نئون و شدت نور */
+    box-shadow: 0 0 20px rgba(0, 172, 238, 0.6);
     z-index: -1;
 }
 
 
-/* استایل برای تصاویر کارت */
+/* Card Image Styles */
 
 .card-img-top {
     width: 100%;
     display: block;
-    border-bottom: 2px solid #ff69b4;
-    /* خط پایین نئون صورتی */
+    border-bottom: 2px solid #00a8e8;
 }
 
 
-/* استایل برای دکمه‌های "Read More" */
+/* Read More Button Styles */
 
 .btn-primary {
-    background-color: #ff69b4;
+    background-color: #00a8e8;
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -210,15 +230,14 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-    /* افکت نئون برای متن دکمه */
+    text-shadow: 0 0 6px rgba(0, 172, 238, 0.5);
 }
 
 .btn-primary:hover {
     background-color: #fff;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+    color: #00a8e8;
+    border: 2px solid #00a8e8;
+    text-shadow: 0 0 12px #00a8e8, 0 0 24px #00a8e8;
 }
 
 
@@ -227,7 +246,7 @@
 .card {
     background-color: #222;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 172, 238, 0.2);
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
@@ -235,8 +254,8 @@
 
 .card-header {
     background-color: #333;
-    color: #ff69b4;
-    border-bottom: 2px solid #ff69b4;
+    color: #00a8e8;
+    border-bottom: 2px solid #00a8e8;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     font-size: 1.2rem;
@@ -268,7 +287,7 @@ input[type="text"],
 textarea,
 select {
     background-color: #333;
-    border: 1px solid #ff69b4;
+    border: 1px solid #00a8e8;
     border-radius: 10px;
     color: #fff;
     padding: 10px;
@@ -279,12 +298,12 @@ select {
 input[type="text"]:focus,
 textarea:focus,
 select:focus {
-    border-color: #ff007f;
+    border-color: #00a8e8;
     outline: none;
 }
 
 button[type="submit"] {
-    background-color: #ff69b4;
+    background-color: #00a8e8;
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -296,9 +315,9 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #fff;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+    color: #00a8e8;
+    border: 2px solid #00a8e8;
+    text-shadow: 0 0 12px #00a8e8, 0 0 24px #00a8e8;
 }
 
 
@@ -307,14 +326,14 @@ button[type="submit"]:hover {
 .card {
     background-color: #222;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 172, 238, 0.2);
     color: #fff;
     padding: 20px;
     margin-bottom: 20px;
 }
 
 .card h1 {
-    color: #ff69b4;
+    color: #00a8e8;
     margin-bottom: 10px;
 }
 
@@ -323,8 +342,11 @@ button[type="submit"]:hover {
     margin-bottom: 20px;
 }
 
+
+/* Delete Confirmation Button Styles */
+
 .btn-danger {
-    background-color: #ff007f;
+    background-color: #00a8e8;
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -332,160 +354,35 @@ button[type="submit"]:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-    /* افکت نئون برای متن دکمه */
 }
 
 .btn-danger:hover {
     background-color: #fff;
-    color: #ff007f;
-    border: 2px solid #ff007f;
-    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+    color: #00a8e8;
+    border: 2px solid #fff;
+    text-shadow: 0 0 12px #00a8e8, 0 0 24px #00a8e8;
 }
 
 
-/* Post Detail Page Styles */
+/* Footer Styles */
 
-.card {
-    background-color: #222;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
-    color: #fff;
+.footer {
+    background-color: #111;
+    color: #00a8e8;
     padding: 20px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
-.card h1,
-.card h3 {
-    color: #ff69b4;
-    /* نئون صورتی برای عناوین */
+.footer .social-links a {
+    color: #00a8e8;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
 }
 
-.card p,
-.card .text-muted {
-    color: #ddd;
-    /* رنگ خاکستری روشن برای متن */
-}
-
-.btn-info {
-    background-color: #00bfff;
-    border: none;
+.footer .social-links a:hover {
     color: #fff;
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-shadow: 0 0 6px rgba(0, 191, 255, 0.5);
-    /* افکت نئون برای دکمه‌ها */
-    transition: background-color 0.3s ease;
 }
-
-.btn-info:hover {
-    background-color: #fff;
-    color: #00bfff;
-    border: 2px solid #00bfff;
-    text-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff;
-}
-
-.btn-danger {
-    background-color: #ff007f;
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-    /* افکت نئون برای دکمه‌ها */
-    transition: background-color 0.3s ease;
-}
-
-.btn-danger:hover {
-    background-color: #fff;
-    color: #ff007f;
-    border: 2px solid #ff007f;
-    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
-}
-
-.btn-primary {
-    background-color: #ff69b4;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #fff;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
-}
-
-
-/* دکمه ویرایش */
-
-.btn-info {
-    background-color: #00bfff;
-    /* رنگ آبی روشن برای دکمه ویرایش */
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-shadow: 0 0 6px rgba(0, 191, 255, 0.5);
-    /* افکت نئون برای دکمه‌ها */
-    transition: background-color 0.3s ease;
-}
-
-.btn-info:hover {
-    background-color: #fff;
-    color: #00bfff;
-    border: 2px solid #00bfff;
-    text-shadow: 0 0 12px #00bfff, 0 0 24px #00bfff;
-}
-
-
-/* سایر دکمه‌ها برای هماهنگی */
-
-.btn-danger {
-    background-color: #ff007f;
-    border: none;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 0.9rem;
-    border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-    /* افکت نئون برای دکمه‌ها */
-    transition: background-color 0.3s ease;
-}
-
-.btn-danger:hover {
-    background-color: #fff;
-    color: #ff007f;
-    border: 2px solid #ff007f;
-    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
-}
-
-.btn-primary {
-    background-color: #ff69b4;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #fff;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
-}
-
-
-/* General Styles */
 
 
 /* General Styles */
@@ -505,14 +402,14 @@ body {
     position: relative;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 0, 127, 0.5)),
+    background: linear-gradient(rgba(27, 38, 59, 0.6), rgba(0, 168, 232, 0.5)),
     url("{% static 'images/hero.jpg' %}") no-repeat center center;
     background-size: cover;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
+    min-height: 500px;
     margin-bottom: 30px;
 }
 
@@ -522,13 +419,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(27, 38, 59, 0.5);
+    z-index: 1;
     /* Dark overlay to enhance text visibility */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 80%;
     /* Limit the width of the content */
     margin: auto;
@@ -538,17 +436,17 @@ body {
     font-size: 3rem;
     margin-bottom: 10px;
     font-weight: bold;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 10px rgba(27, 38, 59, 0.7);
 }
 
 .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 8px rgba(27, 38, 59, 0.6);
 }
 
 .hero-content .btn-primary {
-    background-color: #ff69b4;
+    background-color: #00a8e8;
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -556,164 +454,158 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     border-radius: 8px;
-    text-shadow: 0 0 6px rgba(255, 105, 180, 0.7);
+    text-shadow: 0 0 6px rgba(0, 168, 232, 0.7);
 }
 
 .hero-content .btn-primary:hover {
     background-color: #fff;
-    color: #ff69b4;
-    border: 2px solid #ff69b4;
-    text-shadow: 0 0 12px #ff69b4, 0 0 24px #ff69b4;
+    color: #00a8e8;
+    border: 2px solid #00a8e8;
+    text-shadow: 0 0 12px #00a8e8, 0 0 24px #00a8e8;
     transform: scale(1.1);
 }
 
 
-/* فایل styles.css */
+/* File styles.css */
 
 .form-card {
-    background-color: #000000;
+    background-color: #0f1828;
     /* رنگ پس‌زمینه کارت */
-    border: 1px solid #b42776;
+    border: 0.5px solid #00a8e8;
     /* مرز سبک برای کارت */
-    max-width: 500px;
-    margin: auto;
+    max-width: 400px;
+    margin: 20px auto;
+    /* مرکز کردن عمودی با فاصله از بالا و پایین */
+    padding: 20px;
     /* عرض کارت را محدود کردیم */
+    border-radius: 8px;
+    /* اضافه کردن گوشه‌های گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* افزودن سایه به کارت */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* مرکز کردن محتوا افقی */
 }
 
 .form-title {
-    color: #FF1493;
+    color: #00a8e8;
     /* رنگ تیتر فرم به رنگ اصلی سایت */
     font-weight: bold;
+    font-size: 1.5rem;
+    /* اندازه متن تیتر */
+    margin-bottom: auto;
+    /* فاصله پایین تیتر */
 }
 
 .form-text {
-    color: #FF1493;
+    color: #00a8e8;
     /* رنگ متن‌های فرم به رنگ اصلی سایت */
-}
-
-
-/* Navbar Styles */
-
-.navbar {
-    background: linear-gradient(90deg, #91024a8e, #000000);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 30px;
-    background: rgba(255, 0, 127, 0.3);
-    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
-    z-index: -1;
-    transition: box-shadow 0.3s ease;
-}
-
-.navbar:hover::before {
-    box-shadow: 0 0 25px rgba(255, 0, 127, 1);
-}
-
-.navbar-brand {
-    font-size: 1.8rem;
-    color: #ffffffca;
-    text-decoration: none;
-    font-weight: bold;
-    text-shadow: 0 0 8px #ff007f, 0 0 15px #ff007f;
-}
-
-.navbar-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-link {
-    color: #ffffff;
     font-size: 1rem;
-    text-decoration: none;
-    padding: 8px 15px;
-    transition: color 0.3s ease;
-    border-radius: 10px;
-    text-shadow: 0 0 6px rgba(255, 0, 127, 0.5);
-}
-
-.nav-link:hover {
-    color: #ff007f;
-    text-shadow: 0 0 12px #ff007f, 0 0 24px #ff007f;
+    /* اندازه متن‌های فرم */
+    text-align: center;
+    /* مرکز کردن متن‌ها */
+    margin-bottom: 10px;
+    /* فاصله پایین متن‌های فرم */
 }
 
 
-/* Media Queries for Responsive Design */
+/* File styles.css */
 
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .navbar-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .navbar-brand {
-        font-size: 1.5rem;
-    }
-    .nav-link {
-        font-size: 0.9rem;
-    }
-}
 
-@media (max-width: 480px) {
-    .navbar {
-        padding: 5px;
-    }
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-    .nav-link {
-        font-size: 0.8rem;
-    }
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    .hero-content p {
-        font-size: 1.2rem;
-    }
+/* Custom styles for the post detail card */
+
+.post-detail-card {
+    background-color: #1b263b;
+    /* رنگ پس‌زمینه کارت */
+    border: 1px solid #00a8e8;
+    /* مرز سبک برای کارت */
+    padding: 20px;
+    /* فضای داخلی کارت */
+    border-radius: 8px;
+    /* گوشه‌های گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* سایه ملایم */
+    margin-bottom: 20px;
+    /* فاصله پایین کارت */
 }
 
 
-/* Adjustments for Cards and Forms */
+/* Custom styles for the comments card */
 
-.card {
-    border-radius: 10px;
-    padding: 15px;
+.comments-card {
+    background-color: #1b263b;
+    /* رنگ پس‌زمینه کارت */
+    border: 1px solid #00a8e8;
+    /* مرز سبک برای کارت */
+    padding: 20px;
+    /* فضای داخلی کارت */
+    border-radius: 8px;
+    /* گوشه‌های گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* سایه ملایم */
+    margin-bottom: 20px;
+    /* فاصله پایین کارت */
 }
 
-.card img {
-    border-bottom: 2px solid #ff69b4;
+
+/* Custom styles for the add comment card */
+
+.add-comment-card {
+    background-color: #1b263b;
+    /* رنگ پس‌زمینه کارت */
+    border: 1px solid #00a8e8;
+    /* مرز سبک برای کارت */
+    padding: 20px;
+    /* فضای داخلی کارت */
+    border-radius: 8px;
+    /* گوشه‌های گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* سایه ملایم */
 }
 
-.form-card {
-    padding: 15px;
+
+/* Custom styles for the sidebar card */
+
+.sidebar-card {
+    background-color: #1b263b;
+    /* رنگ پس‌زمینه کارت */
+    border: 1px solid #00a8e8;
+    /* مرز سبک برای کارت */
+    margin-top: 20px;
+    /* فاصله بالا */
+    margin-bottom: 20px;
+    /* فاصله پایین */
+    border-radius: 8px;
+    /* گوشه‌های گرد */
+}
+
+
+/* Button styles */
+
+.btn-primary {
+    background-color: #00a8e8;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #007bb5;
 }
 
 
 /* Responsive Adjustments for Grid Layout */
 
 .main-content {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     padding: 10px;
 }
 
 .post-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 15px;
 }

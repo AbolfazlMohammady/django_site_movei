@@ -1,8 +1,8 @@
 /* رنگ پس‌زمینه کلی */
 
 body {
-    background: linear-gradient(135deg, #93235bdb, #000000);
-    /* پس‌زمینه گرادیانت از مشکی تیره به مشکی */
+    background: linear-gradient(135deg, #1B263B, #000000);
+    /* پس‌زمینه گرادیانت از آبی تیره به مشکی */
     background-size: 200% 200%;
     /* اندازه بزرگتر برای افکت پویانمایی */
     font-family: 'Arial', sans-serif;
@@ -19,7 +19,7 @@ body {
 }
 
 
-/* انیمیشن تغییر رنگ پس‌زمینه*/
+/* انیمیشن تغییر رنگ پس‌زمینه */
 
 @keyframes backgroundAnimation {
     0% {
@@ -38,8 +38,8 @@ body {
 .login-container {
     background: #1a1a1a;
     /* پس‌زمینه مشکی تیره */
-    border: 3px solid #ff007f;
-    /* صورتی نئون */
+    border: 3px solid #FF6F00;
+    /* نارنجی */
     border-radius: 10px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
     /* سایه تیره برای عمق بیشتر */
@@ -67,10 +67,10 @@ body {
 @keyframes pulse {
     0%,
     100% {
-        box-shadow: 0 8px 15px rgba(255, 0, 127, 0.1);
+        box-shadow: 0 8px 15px rgba(255, 111, 0, 0.1);
     }
     50% {
-        box-shadow: 0 15px 25px rgba(255, 0, 127, 0.3);
+        box-shadow: 0 15px 25px rgba(255, 111, 0, 0.3);
     }
 }
 
@@ -78,8 +78,8 @@ body {
 /* انیمیشن حروف عنوان */
 
 h2 {
-    color: #ff007f;
-    /* صورتی نئون */
+    color: #00A8E8;
+    /* آبی فیروزه‌ای */
     font-size: 24px;
     margin-bottom: 20px;
     display: inline-block;
@@ -90,11 +90,11 @@ h2 {
 
 @keyframes titleAnimation {
     0% {
-        color: #ff4da6;
+        color: #00A8E8;
         transform: scale(1);
     }
     100% {
-        color: #ff007f;
+        color: #FF6F00;
         transform: scale(1.1);
     }
 }
@@ -103,8 +103,8 @@ h2 {
 /* استایل برای پاراگراف‌ها */
 
 p {
-    color: #bbbbbb;
-    /* خاکستری روشن برای تضاد بهتر با پس‌زمینه */
+    color: #FFFFFF;
+    /* سفید برای تضاد بهتر با پس‌زمینه */
     font-size: 14px;
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in;
@@ -127,8 +127,8 @@ p {
     position: absolute;
     left: 10px;
     font-size: 18px;
-    color: #ff007f;
-    /* صورتی نئون */
+    color: #00A8E8;
+    /* آبی فیروزه‌ای */
 }
 
 .input-group input {
@@ -146,11 +146,11 @@ p {
 /* انیمیشن تمرکز بر روی ورودی‌ها */
 
 .input-group input:focus {
-    border-color: #ff007f;
-    /* نئون صورتی */
+    border-color: #00A8E8;
+    /* آبی فیروزه‌ای */
     outline: none;
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-    /* سایه نئون صورتی */
+    box-shadow: 0 0 10px rgba(0, 168, 232, 0.5);
+    /* سایه آبی فیروزه‌ای */
     transform: scale(1.02);
     /* کمی بزرگ شدن ورودی هنگام تمرکز */
 }
@@ -173,8 +173,8 @@ p {
 /* استایل برای دکمه‌ها */
 
 .btn {
-    background-color: #ff007f;
-    /* صورتی نئون */
+    background-color: #00A8E8;
+    /* آبی فیروزه‌ای */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -196,7 +196,7 @@ p {
 }
 
 .btn:hover {
-    background-color: #ff4da6;
+    background-color: #00A8E8;
     /* رنگ روشن‌تر برای حالت هاور */
     transform: scale(1.05);
     /* بزرگ‌تر شدن دکمه در هنگام هاور */
@@ -206,8 +206,8 @@ p {
 /* استایل برای لینک‌ها */
 
 .links a {
-    color: #ff007f;
-    /* نئون صورتی */
+    color: #00A8E8;
+    /* آبی فیروزه‌ای */
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
@@ -217,10 +217,10 @@ p {
 
 @keyframes linkAnimation {
     0% {
-        color: #ff007f;
+        color: #00A8E8;
     }
     100% {
-        color: #ff4da6;
+        color: #FF6F00;
     }
 }
 
@@ -231,8 +231,8 @@ p {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #ff007f;
-    /* صورتی نئون */
+    background: #00A8E8;
+    /* آبی فیروزه‌ای */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -243,9 +243,12 @@ p {
 }
 
 .toggle-dark-mode:hover {
-    background-color: #ff4da6;
+    background-color: #00A8E8;
     /* رنگ روشن‌تر برای حالت هاور */
 }
+
+
+/* استایل برای پیام‌های خطا */
 
 .error {
     color: rgb(0, 225, 255);
@@ -261,7 +264,7 @@ p {
     padding: 10px 20px;
     font-size: 16px;
     color: #ffffff;
-    background-color: #ff007f;
+    background-color: #00A8E8;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -274,12 +277,12 @@ p {
 
 @media (max-width: 768px) {
     .login-container {
-        padding: 20px;
+        padding: 30px;
     }
     .login-form {
-        width: 100%;
-        /* عرض فرم در موبایل به 100% */
-        padding: 15px;
+        width: 90%;
+        /* عرض فرم در موبایل به 90% */
+        padding: 20px;
         /* فضای داخلی بیشتر برای دکمه‌ها و ورودی‌ها */
     }
     .input-group {
@@ -295,11 +298,4 @@ p {
         padding: 12px 0;
         /* فضای داخلی بیشتر برای دکمه‌ها در موبایل */
     }
-}
-
-
-/* استایل برای وقتی که موس یا لمس بر روی دکمه است */
-
-.btn:hover {
-    background-color: #e60074;
 }

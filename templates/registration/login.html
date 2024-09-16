@@ -38,14 +38,15 @@
             </div>
         </div>
     </div>
+    
 
-    <script>
+    {% comment %} <script>
         document.addEventListener('mousemove', function(e) {
             var x = e.clientX / window.innerWidth;
             var y = e.clientY / window.innerHeight;
             document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #ff007f, #000000)`;
         });
 
-    </script>
+    </script> {% endcomment %}
 </body>
 </html>

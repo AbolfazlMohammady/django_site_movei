@@ -1,59 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation for cards
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('mouseover', () => {
-            card.style.transform = 'scale(1.05)';
-        });
-        card.addEventListener('mouseout', () => {
-            card.style.transform = 'scale(1)';
-        });
-    });
-
-    // Theme toggle button
     const themeToggleButton = document.querySelector('.toggle-theme');
+    const body = document.body;
+
     if (themeToggleButton) {
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            themeToggleButton.textContent = 'Light Mode';
-        } else {
-            themeToggleButton.textContent = 'Dark Mode';
-        }
+        const darkModeEnabled = localStorage.getItem('dark-mode') === 'enabled';
+        body.classList.toggle('dark-mode', darkModeEnabled);
+        themeToggleButton.textContent = darkModeEnabled ? 'Light Mode' : 'Dark Mode';
 
         themeToggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-                themeToggleButton.textContent = 'Light Mode';
-            } else {
-                localStorage.setItem('dark-mode', 'disabled');
-                themeToggleButton.textContent = 'Dark Mode';
-            }
-
-            // Toggle icon
-            const icon = themeToggleButton.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-sun');
-                icon.classList.toggle('fa-moon');
-            }
+            const isDarkMode = body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
+            themeToggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
         });
     }
+});
+const toggleButton = document.querySelector('.navbar-toggle');
+const navbarLinks = document.querySelector('.navbar-links');
 
-    // Navbar toggle button
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarLinks = document.querySelector('.navbar-links');
-    if (navbarToggler && navbarLinks) {
-        navbarToggler.addEventListener('click', () => {
-            navbarLinks.classList.toggle('active');
-        });
-    }
-}); // script.js
-
-function toggleNavbar() {
-    const navbarLinks = document.getElementById('navbarLinks');
-    if (navbarLinks.classList.contains('show')) {
-        navbarLinks.classList.remove('show');
-    } else {
-        navbarLinks.classList.add('show');
-    }
-}
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active');
+});

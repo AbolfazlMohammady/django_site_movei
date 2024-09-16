@@ -18,14 +18,5 @@
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener('mousemove', function(e) {
-        // دریافت موقعیت X و Y موس در صفحه
-        var x = e.clientX / window.innerWidth;
-        var y = e.clientY / window.innerHeight;
-        
-        // تغییر رنگ پس‌زمینه بر اساس موقعیت موس
-        document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #ff007f, #000000)`;
-    });
-</script>
+
 {% endblock %}

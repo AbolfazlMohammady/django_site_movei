@@ -13,15 +13,5 @@
         <h2>You have been logged out</h2>
         <p>You've successfully logged out of your account. <a href="{% url 'login' %}">Log in again</a>.</p>
     </div>
-    <script>
-        document.addEventListener('mousemove', function(e) {
-            // دریافت موقعیت X و Y موس در صفحه
-            var x = e.clientX / window.innerWidth;
-            var y = e.clientY / window.innerHeight;
-            
-            // تغییر رنگ پس‌زمینه بر اساس موقعیت موس
-            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, #ff007f, #000000)`;
-        });
-    </script>
 </body>
 </html>
